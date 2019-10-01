@@ -2,6 +2,7 @@ package sbrest.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ public class Product implements Serializable {
     @GeneratedValue
     private Integer id;
 
+    @Column(nullable = false)
     private String name;
 
     private int quantity;
@@ -52,6 +54,6 @@ public class Product implements Serializable {
     }
 
     public void setPrice(double price) {
+        this.price = price;
     }
-
 }
