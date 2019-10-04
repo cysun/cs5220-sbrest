@@ -1,4 +1,4 @@
-package sbrest.controller;
+package sbrest.web;
 
 import java.util.List;
 import java.util.Map;
@@ -54,18 +54,18 @@ public class ProductsController {
     }
 
     @PatchMapping("/{id}")
-    public void update2(@PathVariable Integer id, @RequestBody Map<String, Object> properties) {
+    public void update2(@PathVariable Integer id, @RequestBody Map<String, Object> update) {
         Product product = productDao.getProduct(id);
-        for (String key : properties.keySet()) {
+        for (String key : update.keySet()) {
             switch (key) {
             case "name":
-                product.setName((String) properties.get(key));
+                product.setName((String) update.get(key));
                 break;
             case "quantity":
-                product.setQuantity((Integer) properties.get(key));
+                product.setQuantity((Integer) update.get(key));
                 break;
             case "price":
-                product.setPrice((Double) properties.get(key));
+                product.setPrice((Double) update.get(key));
                 break;
             default:
             }
