@@ -6,9 +6,9 @@ import sbrest.model.Product;
 
 public interface ProductDao {
 
-    Product getProduct(Integer id);
+  Product getProduct(Integer id);
 
-    List<Product> getProducts();
+  List<Product> getProducts();
 
-    Product saveProduct(Product product);
+  Product saveProduct(Product product);
 }

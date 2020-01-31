@@ -14,23 +14,22 @@ import sbrest.model.dao.ProductDao;
 @Repository
 public class ProductDaoImpl implements ProductDao {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+  @PersistenceContext
+  private EntityManager entityManager;
 
-    @Override
-    public Product getProduct(Integer id) {
-        return entityManager.find(Product.class, id);
-    }
+  @Override
+  public Product getProduct(Integer id) {
+    return entityManager.find(Product.class, id);
+  }
 
-    @Override
-    public List<Product> getProducts() {
-        return entityManager.createQuery("from Product", Product.class)
-                .getResultList();
-    }
+  @Override
+  public List<Product> getProducts() {
+    return entityManager.createQuery("from Product", Product.class).getResultList();
+  }
 
-    @Override
-    @Transactional
-    public Product saveProduct(Product product) {
-        return entityManager.merge(product);
-    }
+  @Override
+  @Transactional
+  public Product saveProduct(Product product) {
+    return entityManager.merge(product);
+  }
 }

@@ -16,41 +16,41 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "categories")
 public class Category implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue
-    private Integer id;
+  @Id
+  @GeneratedValue
+  private Integer id;
 
-    @Column(nullable = false)
-    private String name;
+  @Column(nullable = false)
+  private String name;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "category")
-    private List<Product> products;
+  @JsonIgnore
+  @OneToMany(mappedBy = "category")
+  private List<Product> products;
 
-    public Integer getId() {
-        return id;
-    }
+  public Integer getId() {
+    return id;
+  }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public List<Product> getProducts() {
-        return products;
-    }
+  public List<Product> getProducts() {
+    return products;
+  }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
+  public void setProducts(List<Product> products) {
+    this.products = products;
+  }
 
 }
